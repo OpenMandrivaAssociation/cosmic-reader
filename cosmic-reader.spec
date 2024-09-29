@@ -20,9 +20,7 @@ BuildRequires:  pkgconfig(xkbcommon)
 %prep
 %autosetup -n cosmic-reader-master -a1 -p1
 %cargo_prep -v vendor
-cat >>.cargo/config <<EOF
-[source.crates-io]
-replace-with = "vendored-sources"
+cat >>.cargo/config.toml <<EOF
 
 [source."git+https://github.com/DioxusLabs/taffy?rev=7781c70"]
 git = "https://github.com/DioxusLabs/taffy"
@@ -75,9 +73,6 @@ replace-with = "vendored-sources"
 git = "https://github.com/wash2/accesskit.git"
 branch = "winit-0.29"
 replace-with = "vendored-sources"
-
-[source.vendored-sources]
-directory = "vendor"
 EOF
 
 %build
