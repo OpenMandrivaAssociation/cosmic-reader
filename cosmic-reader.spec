@@ -6,7 +6,7 @@ License:        GPL-3.0-only
 Group:          Reader
 URL:            https://github.com/pop-os/cosmic-reader
 # Source0:        https://github.com/pop-os/cosmic-screenshot/archive/epoch-%{version}-alpha.2/%{name}-epoch-%{version}-alpha.2.tar.gz
-Source:         cosmic-reader-master.tar.gz
+Source0:        cosmic-reader-master.tar.gz
 Source1:        vendor.tar.xz
 Source2:        cargo_config
 
