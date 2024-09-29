@@ -19,6 +19,7 @@ BuildRequires:  pkgconfig(xkbcommon)
 
 %prep
 %autosetup -n cosmic-reader-master -a1 -p1
+%cargo_prep -v vendor
 mkdir .cargo
 cp %{SOURCE2} .cargo/config
 
