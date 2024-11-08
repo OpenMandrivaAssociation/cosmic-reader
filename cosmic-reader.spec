@@ -1,5 +1,5 @@
 Name:           cosmic-reader
-Version:        0.1.0+git20240926
+Version:        0.1.0+git20241022
 Release:        0
 Summary:        COSMIC PDF reader
 License:        GPL-3.0-only
@@ -21,15 +21,9 @@ BuildRequires:  pkgconfig(xkbcommon)
 %autosetup -n cosmic-reader-master -a1 -p1
 %cargo_prep -v vendor
 cat >>.cargo/config.toml <<EOF
-
 [source."git+https://github.com/DioxusLabs/taffy?rev=7781c70"]
 git = "https://github.com/DioxusLabs/taffy"
 rev = "7781c70"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/gfx-rs/wgpu?rev=20fda69"]
-git = "https://github.com/gfx-rs/wgpu"
-rev = "20fda69"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/jackpot51/rust-atomicwrites"]
@@ -40,9 +34,9 @@ replace-with = "vendored-sources"
 git = "https://github.com/pop-os/cosmic-text.git"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/pop-os/glyphon.git?tag=v0.5.0"]
+[source."git+https://github.com/pop-os/glyphon.git?tag=iced-0.14-dev"]
 git = "https://github.com/pop-os/glyphon.git"
-tag = "v0.5.0"
+tag = "iced-0.14-dev"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/pop-os/libcosmic.git"]
@@ -59,19 +53,19 @@ git = "https://github.com/pop-os/softbuffer"
 tag = "cosmic-4.0"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/pop-os/window_clipboard.git?tag=pop-dnd-8"]
+[source."git+https://github.com/pop-os/window_clipboard.git?tag=pop-0.13"]
 git = "https://github.com/pop-os/window_clipboard.git"
-tag = "pop-dnd-8"
+tag = "pop-0.13"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/pop-os/winit.git?branch=winit-0.29"]
+[source."git+https://github.com/pop-os/winit.git?tag=iced-xdg-surface-0.13"]
 git = "https://github.com/pop-os/winit.git"
-branch = "winit-0.29"
+tag = "iced-xdg-surface-0.13"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/wash2/accesskit.git?branch=winit-0.29"]
-git = "https://github.com/wash2/accesskit.git"
-branch = "winit-0.29"
+[source."git+https://github.com/wash2/accesskit?tag=iced-xdg-surface-0.13"]
+git = "https://github.com/wash2/accesskit"
+tag = "iced-xdg-surface-0.13"
 replace-with = "vendored-sources"
 EOF
 
